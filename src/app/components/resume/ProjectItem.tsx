@@ -8,7 +8,7 @@ interface ProjectItemProps {
 export default function ProjectItem({ project, isLast }: ProjectItemProps) {
   return (
     <>
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4 project-item no-break">
         <div className="flex flex-col gap-2">
           <h3 className="text-[16px] font-bold text-gray-900 border-b-2 border-gray-300 pb-1.5">
             {project.title}

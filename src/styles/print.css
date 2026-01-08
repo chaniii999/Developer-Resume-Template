@@ -1,0 +1,58 @@
+/* 인쇄/PDF 최적화 스타일 */
+
+@media print {
+  /* 페이지 설정 */
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  /* 전체 레이아웃 */
+  body {
+    margin: 0;
+    padding: 0;
+    background: white;
+  }
+
+  /* 페이지 나눔 방지 */
+  .no-break {
+    page-break-inside: avoid;
+  }
+
+  /* 섹션 간 페이지 나눔 */
+  section {
+    page-break-inside: avoid;
+  }
+
+  /* 프로젝트 항목이 페이지 중간에서 나뉘지 않도록 */
+  .project-item {
+    page-break-inside: avoid;
+  }
+
+  /* 링크 색상 유지 (일부 브라우저에서 인쇄 시 색상이 사라질 수 있음) */
+  a {
+    color: #2563eb !important;
+    text-decoration: underline;
+  }
+
+  /* 배경색 제거 (인쇄 시 잉크 절약) */
+  .bg-gray-50,
+  .bg-blue-50 {
+    background: white !important;
+    border: 1px solid #e5e7eb !important;
+  }
+
+  /* 그림자 제거 */
+  .shadow-lg {
+    box-shadow: none !important;
+  }
+
+  /* 불필요한 여백 제거 */
+  .print\\:p-0 {
+    padding: 0 !important;
+  }
+
+  .print\\:bg-white {
+    background: white !important;
+  }
+}
