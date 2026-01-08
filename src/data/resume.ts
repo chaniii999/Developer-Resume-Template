@@ -30,6 +30,11 @@ export interface Project {
   subject: string;
   period: string;
   role: string;
+  repository?: {
+    backend?: string;
+    frontend?: string;
+    repo?: string;
+  };
   description: string;
   techStack: {
     backend?: string;
@@ -39,7 +44,6 @@ export interface Project {
   };
   responsibilities: string[];
   achievements?: string[];
-  github?: string;
 }
 
 export interface Education {
@@ -114,6 +118,9 @@ Java 및 Spring Boot 기반의 실시간 시스템 구축과 성능 최적화 �
       subject: '텍스트 편집 어플리케이션',
       period: '2025.12 ~ 2025.12 (진행중)',
       role: '1인 개발',
+      repository: {
+        repo: 'https://github.com/chaniii999/FolderingApp',
+      },
       description: `키보드 중심의 빠른 파일 탐색 및 텍스트 편집 데스크톱앱.
 마우스 없이도 모든 작업을 키보드로 수행할 수 있도록 설계되어
 개발자, 작가, 메모 작성자에게 최적화된 사용자 경험을 제공함.`,
@@ -126,13 +133,16 @@ Java 및 Spring Boot 기반의 실시간 시스템 구축과 성능 최적화 �
       responsibilities: [
         '총 개발',
       ],
-      github: 'https://github.com/chaniii999/FolderingApp',
     },
     {
       title: '02. 뽀모도로 AI 피드백 앱 (IOS)',
       subject: '학습 AI 피드백 통계 앱',
       period: '2025.06 ~ 2025.10 (잠정 중단)',
       role: '1인 개발',
+      repository: {
+        backend: 'https://github.com/chaniii999/StudyMate',
+        frontend: 'https://github.com/chaniii999/studyMateFrontApp',
+      },
       description: `뽀모도로 타이머로 기록한 데이터를 바탕으로 AI 피드백 문서를 생성해, 사용자에게 전략적 학습 방법과 학습 통계를 제공함.`,
       techStack: {
         backend: 'Java, Spring Boot, JPA',
@@ -143,7 +153,6 @@ Java 및 Spring Boot 기반의 실시간 시스템 구축과 성능 최적화 �
       responsibilities: [
         '총 개발',
       ],
-      github: 'https://github.com/chaniii999/StudyMate',
     },
     {
       title: '03. 커뮤니티 메신저 어플 프로젝트',
@@ -176,6 +185,10 @@ Java 및 Spring Boot 기반의 실시간 시스템 구축과 성능 최적화 �
       subject: '캘린더 푸시알림 앱(EveryPlan)',
       period: '2025.08.14 ~ 2025.08.24 (10일)',
       role: '풀스택 1인',
+      repository: {
+        backend: 'https://github.com/chaniii999/calendar',
+        frontend: 'https://github.com/chaniii999/calendar-front',
+      },
       description: `EveryPlan은 기본적인 프론트엔드, 백엔드, CI/CD 규격화를 위해 만들어졌습니다.
 중요 기능으로는 푸시알림으로,
 일정 시작시간 지정을 통해 정해진 시간에 푸시알람을 받을 수 있습니다.`,
@@ -191,13 +204,15 @@ Java 및 Spring Boot 기반의 실시간 시스템 구축과 성능 최적화 �
         '프론트엔드, 백엔드 구현',
         'AWS CLOUD를 통해 웹사이트 운영',
       ],
-      github: 'https://github.com/chaniii999/calendar',
     },
     {
       title: '05. DayLongCafe 단골왕 이벤트 배너 (실서비스)',
       subject: '무인 카페 단골왕 랭킹',
       period: '2025.02 - 2025.03',
       role: 'BE 담당, FE 1인 (총 2명)',
+      repository: {
+        repo: 'https://github.com/chanii999/DayLongCafe',
+      },
       description: `한 달간 무인 카페의 음료 구매 횟수를 집계하여
 상위 고객에게 리워드를 제공하는 단골 고객 랭킹 시스템을 구축.
 
@@ -220,7 +235,6 @@ Java 및 Spring Boot 기반의 실시간 시스템 구축과 성능 최적화 �
         '회원별 소비 변화를 분석 결과, 중앙값 기준 2.39배, 평균 2.72배, 상위 10% 고객은 5.98배까지 증가',
         '단기 프로모션을 통해 기존 고객의 재방문 유도 및 충성 고객 소비 확대에 성공',
       ],
-      github: 'https://github.com/chaniii999/DayLongCafe',
     },
   ],
   // ============================================

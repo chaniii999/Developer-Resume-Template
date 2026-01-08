@@ -13,25 +13,25 @@ export default function App() {
         <div className="p-[28px]">
           <Header personalInfo={resumeData.personalInfo} />
 
-          <div className="border-t border-gray-200 mb-6"></div>
+          <div className="h-8"></div>
 
           <Summary summary={resumeData.summary} />
 
-          <div className="border-t border-gray-200 mb-6"></div>
+          <div className="h-8"></div>
 
           <Skills skills={resumeData.skills} />
 
-          <div className="border-t border-gray-200 mb-6"></div>
+          <div className="h-8"></div>
 
           <Projects projects={resumeData.projects} />
 
-          <div className="border-t border-gray-200 mb-6"></div>
+          <div className="h-8"></div>
 
           <Education education={resumeData.education} />
 
           {resumeData.qualifications && resumeData.qualifications.length > 0 && (
             <>
-              <div className="border-t border-gray-200 mb-6"></div>
+              <div className="h-8"></div>
               <Qualifications qualifications={resumeData.qualifications} />
             </>
           )}

@@ -24,6 +24,50 @@ export default function ProjectItem({ project, isLast }: ProjectItemProps) {
 
               <div className="text-gray-700 font-semibold">역할 및 인원</div>
               <div className="text-gray-800">{project.role}</div>
+
+              {project.repository && (
+                <>
+                  <div className="text-gray-700 font-semibold">저장소</div>
+                  <div className="text-gray-800 flex flex-col gap-1">
+                    {project.repository.repo && (
+                      <a
+                        href={project.repository.repo.startsWith('http') ? project.repository.repo : `https://${project.repository.repo}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-600 hover:text-blue-800 hover:underline"
+                      >
+                        {project.repository.repo}
+                      </a>
+                    )}
+                    {project.repository.backend && (
+                      <div>
+                        <span className="text-gray-600">BE: </span>
+                        <a
+                          href={project.repository.backend.startsWith('http') ? project.repository.backend : `https://${project.repository.backend}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-blue-600 hover:text-blue-800 hover:underline"
+                        >
+                          {project.repository.backend}
+                        </a>
+                      </div>
+                    )}
+                    {project.repository.frontend && (
+                      <div>
+                        <span className="text-gray-600">FE: </span>
+                        <a
+                          href={project.repository.frontend.startsWith('http') ? project.repository.frontend : `https://${project.repository.frontend}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-blue-600 hover:text-blue-800 hover:underline"
+                        >
+                          {project.repository.frontend}
+                        </a>
+                      </div>
+                    )}
+                  </div>
+                </>
+              )}
             </div>
           </div>
         </div>
@@ -103,19 +147,6 @@ export default function ProjectItem({ project, isLast }: ProjectItemProps) {
           </div>
         )}
 
-        {project.github && (
-          <div className="text-[12px] text-gray-600 border-t border-gray-200 pt-2">
-            <span className="font-semibold text-gray-700">GitHub:</span>{' '}
-            <a
-              href={project.github.startsWith('http') ? project.github : `https://${project.github}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-600 hover:text-blue-800 hover:underline"
-            >
-              {project.github}
-            </a>
-          </div>
-        )}
       </div>
       {!isLast && <div className="border-t-2 border-gray-300 mt-2"></div>}
     </>

@@ -7,7 +7,7 @@ interface SkillsProps {
 export default function Skills({ skills }: SkillsProps) {
   return (
     <section className="mb-6">
-      <h2 className="text-[16px] font-semibold text-gray-900 mb-4 uppercase tracking-wide border-b-2 border-gray-400 pb-2">
+      <h2 className="text-[16px] font-semibold text-gray-900 mb-4 uppercase tracking-wide border-b-4 border-gray-800 pb-2">
         Skills
       </h2>
       <div className="flex flex-col gap-3">
