@@ -42,6 +42,11 @@
     border: 1px solid #e5e7eb !important;
   }
 
+  /* 상단 디자인 요소는 인쇄 시에도 유지 */
+  .bg-gradient-to-r {
+    background: linear-gradient(to right, #2563eb, #3b82f6, #4f46e5) !important;
+  }
+
   /* 그림자 제거 */
   .shadow-lg {
     box-shadow: none !important;

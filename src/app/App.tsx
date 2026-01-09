@@ -10,7 +10,18 @@ export default function App() {
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center p-8 print:p-0 print:bg-white">
       <div className="bg-white shadow-lg print:shadow-none w-[210mm] min-h-[297mm] font-[Inter,system-ui,-apple-system,sans-serif]">
-        <div className="p-[28px]">
+        {/* 상단 디자인 요소 */}
+        <div className="bg-gradient-to-r from-blue-600 via-blue-500 to-indigo-600 h-2"></div>
+        <div className="flex items-center gap-2 px-[28px] pt-6 pb-4">
+          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
+          <div className="flex gap-1">
+            <div className="w-2 h-2 rounded-full bg-blue-600"></div>
+            <div className="w-2 h-2 rounded-full bg-blue-500"></div>
+            <div className="w-2 h-2 rounded-full bg-indigo-600"></div>
+          </div>
+          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
+        </div>
+        <div className="px-[28px]">
           <Header personalInfo={resumeData.personalInfo} />
 
           <div className="h-8"></div>

@@ -7,13 +7,25 @@ interface HeaderProps {
 export default function Header({ personalInfo }: HeaderProps) {
   return (
     <header className="mb-6">
-      <div className="border-b-2 border-gray-300 pb-3 mb-3">
-        <h1 className="text-[32px] font-bold leading-tight mb-1 text-gray-900">
-          {personalInfo.name} | {personalInfo.nameEn}
-        </h1>
-        <p className="text-[18px] font-semibold text-gray-700">
-          {personalInfo.position}
-        </p>
+      <div className="flex items-start gap-6 pb-4 border-b-2 border-gray-200">
+        <div className="flex-shrink-0">
+          <img
+            src="/image/증명사진.jpg"
+            alt="증명사진"
+            className="w-24 h-32 object-cover rounded-sm border-2 border-gray-300"
+          />
+        </div>
+        <div className="flex flex-col gap-2 flex-1">
+          <h1 className="text-[32px] font-bold leading-tight text-gray-900">
+            {personalInfo.name} | {personalInfo.nameEn}
+          </h1>
+          <div className="flex items-center gap-3">
+            <p className="text-[18px] font-semibold text-gray-700">
+              {personalInfo.position}
+            </p>
+            <div className="w-1 h-1 rounded-full bg-blue-600"></div>
+          </div>
+        </div>
       </div>
       <div className="bg-gray-50 border border-gray-200 rounded-sm">
         <div className="text-[13px] text-gray-700 flex flex-wrap gap-x-3 gap-y-1 p-2">
