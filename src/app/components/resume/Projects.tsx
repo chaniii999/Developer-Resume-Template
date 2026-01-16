@@ -12,7 +12,7 @@ export default function Projects({ projects }: ProjectsProps) {
         Projects
       </h2>
 
-      <div className="flex flex-col gap-6">
+      <div className="flex flex-col gap-6 mt-8">
         {projects.map((project, index) => (
           <ProjectItem
             key={index}

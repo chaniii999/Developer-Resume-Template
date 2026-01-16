@@ -4,7 +4,11 @@
   /* 페이지 설정 */
   @page {
     size: A4;
-    margin: 0;
+    margin: 15mm 0 0 0;
+  }
+  
+  /* 첫 페이지는 상단 여백 없음 */
+  @page :first {
     margin-top: 0;
   }
 
@@ -102,9 +106,15 @@
     overflow: visible !important;
   }
   
-  /* 페이지 상단 여백 제거 */
-  @page {
+  /* 첫 페이지 상단 여백 */
+  .print-top-design .top-bar {
     margin-top: 0 !important;
+  }
+  
+  /* 다음 페이지 상단 여백 (페이지 브레이크 후) */
+  @page :left,
+  @page :right {
+    margin-top: 15mm;
   }
 
   /* 그림자 제거 */

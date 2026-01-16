@@ -32,6 +32,13 @@ export default function App() {
 
           <Skills skills={resumeData.skills} />
 
+          {resumeData.qualifications && resumeData.qualifications.length > 0 && (
+            <>
+              <div className="h-10"></div>
+              <Qualifications qualifications={resumeData.qualifications} />
+            </>
+          )}
+
           <div className="h-10"></div>
 
           <Projects projects={resumeData.projects} />
@@ -39,13 +46,6 @@ export default function App() {
           <div className="h-10"></div>
 
           <Education education={resumeData.education} />
-
-          {resumeData.qualifications && resumeData.qualifications.length > 0 && (
-            <>
-              <div className="h-10"></div>
-              <Qualifications qualifications={resumeData.qualifications} />
-            </>
-          )}
         </div>
       </div>
     </div>
