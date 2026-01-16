@@ -5,6 +5,7 @@
   @page {
     size: A4;
     margin: 0;
+    margin-top: 0;
   }
 
   /* 전체 레이아웃 */
@@ -43,8 +44,67 @@
   }
 
   /* 상단 디자인 요소는 인쇄 시에도 유지 */
-  .bg-gradient-to-r {
-    background: linear-gradient(to right, #2563eb, #3b82f6, #4f46e5) !important;
+  .top-bar {
+    background-color: #111827 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    color-adjust: exact;
+    height: 8px !important;
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  .top-design-line {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    padding: 32px 28px 24px 28px !important;
+  }
+  
+  .top-design-line > div:first-child,
+  .top-design-line > div:last-child {
+    background-color: #d1d5db !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    color-adjust: exact;
+    height: 1px !important;
+    flex: 1 !important;
+  }
+  
+  .top-design-line > div:nth-child(2) {
+    display: flex !important;
+    gap: 6px !important;
+  }
+  
+  .top-design-line > div:nth-child(2) > div {
+    width: 6px !important;
+    height: 6px !important;
+    border-radius: 50% !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    color-adjust: exact;
+  }
+  
+  .top-design-line > div:nth-child(2) > div:nth-child(1),
+  .top-design-line > div:nth-child(2) > div:nth-child(3) {
+    background-color: #4b5563 !important;
+  }
+  
+  .top-design-line > div:nth-child(2) > div:nth-child(2) {
+    background-color: #6b7280 !important;
+  }
+  
+  /* 상단 디자인 요소가 잘리지 않도록 */
+  .print-top-design {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    overflow: visible !important;
+  }
+  
+  /* 페이지 상단 여백 제거 */
+  @page {
+    margin-top: 0 !important;
   }
 
   /* 그림자 제거 */

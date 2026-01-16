@@ -89,26 +89,47 @@ export const resumeData: ResumeData = {
   // ============================================
   // 자기소개 (Summary)
   // ============================================
-  summary: `사용자의 불편함을 발견하고 기술로 해결하는 것을 즐기는 개발자입니다.
+  summary: `Spring Boot 기반 백엔드 시스템 설계 및 개발에 특화된 개발자입니다.
 
-일상에서 겪는 불편함을 관찰하고, 유틸리티 앱을 만들어 직접 해결한 경험이 있습니다.
-백엔드 기술은 사용자에게 더 나은 경험을 제공하기 위한 도구로 생각하며,
-실시간 메시징 시스템 구축과 데이터 기반 서비스 개선에 기여했습니다.`,
+실시간 메시징 시스템 구축 경험을 바탕으로 WebSocket, RabbitMQ를 활용한 
+고성능 백엔드 아키텍처 설계 능력을 보유하고 있습니다. k6 기반 부하 테스트를 통해 
+p95 지연시간 27% 개선, 300명 동시 접속 환경에서 메시지 송수신 성공률 100% 달성 등
+정량적 성과를 도출한 경험이 있습니다.
+
+데이터베이스 인덱스 최적화, Redis 캐싱 전략 수립, 스레드풀 구조 개선 등 
+시스템 성능 향상에 대한 깊은 관심과 실무 경험을 가지고 있으며,
+확장 가능하고 안정적인 백엔드 시스템 구축을 목표로 합니다.`,
   // ============================================
   // 기술 스택 (Skills)
   // ============================================
   skills: [
     {
-      category: 'Programming-BackEnd',
-      items: 'Java, MySQL, Spring Boot, MongoDB, RabbitMQ, Hibernate, WebSocket',
+      category: 'Backend Core',
+      items: 'Java 17, Spring Boot 3.x, Spring Security, Spring Data JPA, Spring WebSocket (STOMP)',
     },
     {
-      category: 'Programming-FrontEnd',
-      items: 'Electron, WebSocket, React',
+      category: 'Database & Cache',
+      items: 'MySQL, MongoDB, Redis, SQLite',
     },
     {
-      category: 'Management Tool',
-      items: 'AWS, - EC2, - S3, - RDS, - Route53, - ACM, GitHub, GitHub Actions',
+      category: 'Message Queue & Real-time',
+      items: 'RabbitMQ, WebSocket (STOMP)',
+    },
+    {
+      category: 'Authentication & Security',
+      items: 'JWT, OAuth2, Spring Security',
+    },
+    {
+      category: 'Infrastructure & DevOps',
+      items: 'AWS (EC2, S3, RDS, Route53, ACM, ALB, VPC, CloudFront), Docker, GitHub Actions',
+    },
+    {
+      category: 'Testing & Monitoring',
+      items: 'k6 (부하 테스트), JUnit 5, Spring Boot Test',
+    },
+    {
+      category: 'Frontend (보조)',
+      items: 'React, React Native, Electron',
     },
   ],
   // ============================================
@@ -116,29 +137,29 @@ export const resumeData: ResumeData = {
   // ============================================
   projects: [
     {
-      title: '01. 텍스트 편집 프로그램',
-      subject: '키보드 중심의 파일 탐색 및 텍스트 편집 데스크톱 애플리케이션',
-      period: '2025.12 ~ 진행중  ',
-      role: '1인 개발',
-      repository: {
-        repo: 'https://github.com/chaniii999/FolderingApp',
-      },
-      description: `마우스 없이도 모든 작업을 키보드 단축키로 수행할 수 있는 로컬 파일 관리 및 텍스트 편집 데스크톱 애플리케이션입니다.
-Context Isolation 기반의 보안 아키텍처와 서비스 레이어 패턴을 적용하여 안정성을 확보했으며,
-React.memo 및 useCallback을 활용한 성능 최적화로 리렌더링을 50-70% 감소시켰습니다.
-Windows와 macOS (Intel & Apple Silicon) 크로스 플랫폼을 지원합니다.`,
+      title: '01. 커뮤니티 메신저 어플 프로젝트',
+      subject: '커뮤니티 + 실시간 통신 시스템',
+      period: '2024.03 – 2024.11',
+      role: '백엔드 개발 리드 / 팀장',
+      description: `WebSocket, RabbitMQ + STOMP를 활용한 커뮤니티 + 실시간 통신 시스템 구축`,
       techStack: {
-        backend: 'node.js, Electron',
-        frontend: 'React, TypeScript, Tailwind CSS, Vite',
-        database: 'SQLite (better-sqlite3)',
-        infra: 'Vitest, electron-builder',
+        backend: 'Spring Boot 3.2, WebSocket(STOMP), RabbitMQ',
+        frontend: 'React, Electron',
+        database: 'MySQL, MongoDB, Redis',
+        infra: 'Docker, GitHub Actions, AWS',
       },
       responsibilities: [
-        '보안 아키텍처 설계(Context Isolation, IPC 통신), 서비스 레이어 패턴 기반 전역 상태 관리',
-        '키보드 단축키 시스템 및 파일 탐색/편집 기능 개발',
-        'React 성능 최적화(리렌더링 50-70% 감소)',
-        '크로스 플랫폼 빌드 및 배포 자동화',
-        'TypeScript 기반 타입 안정성 확보 및 코드 리팩터링',
+        'Spring Boot 3.2, WebSocket(STOMP), RabbitMQ를 활용한 실시간 메시징 백엔드 시스템 설계, 구축',
+        'k6 기반 부하 테스트로 WebSocket 채팅 서버 성능을 정량적으로 검증하며, p95 지연 시간 27% 단축 (91.9ms → 67ms), 최대 지연시간 72% 개선 등 실질 성과 도출',
+        '스레드풀 구조 개선, Redis 캐싱 최적화, RabbitMQ 브로커 튜닝 등 백엔드 코드 레벨 최적화를 직접 주도하여 300명 동시 접속 환경에서 메시지 송수신 성공률 100% 달성',
+        'ExecutorService(스레드풀)와 비동기 메시지 소비 구조를 직접 설계·구현하며, 실시간 대화 서비스의 동시성 문제를 효과적으로 해결',
+        'MongoDB 인덱스 설계, 효율적인 쿼리 작성, 불필요한 데이터 접근 최소화 등 대용량 메시지 데이터 환경에서의 데이터 모델링과 성능 최적화',
+        '메시지 삭제/수정 시 권한 검증, 파일 전송 시 예외 처리, 불필요한 로깅/트랜잭션/캐싱 제거 등, 실무에서 요구되는 견고한 예외 처리와 구조적 코드 리팩터링',
+      ],
+      achievements: [
+        'p95 지연 시간 27% 단축 (91.9ms → 67ms)',
+        '최대 지연시간 72% 개선',
+        '300명 동시 접속 환경에서 메시지 송수신 성공률 100% 달성',
       ],
     },
     {
@@ -169,29 +190,26 @@ WebSocket 기반 실시간 타이머, 학습 목표 및 스케줄 관리, 다양
       ],
     },
     {
-      title: '03. 커뮤니티 메신저 어플 프로젝트',
-      subject: '커뮤니티 + 실시간 통신 시스템',
-      period: '2024.03 – 2024.11',
-      role: '백엔드 개발 리드 / 팀장',
-      description: `WebSocket, RabbitMQ + STOMP를 활용한 커뮤니티 + 실시간 통신 시스템 구축`,
+      title: '03. 텍스트 편집 프로그램',
+      subject: '키보드 중심의 파일 탐색 및 텍스트 편집 데스크톱 애플리케이션',
+      period: '2025.12 ~ 진행중',
+      role: '1인 개발',
+      repository: {
+        repo: 'https://github.com/chaniii999/FolderingApp',
+      },
+      description: `마우스 없이도 모든 작업을 키보드 단축키로 수행할 수 있는 로컬 파일 관리 및 텍스트 편집 데스크톱 애플리케이션입니다.
+Context Isolation 기반의 보안 아키텍처와 서비스 레이어 패턴을 적용하여 안정성을 확보했습니다.`,
       techStack: {
-        backend: 'Spring Boot 3.2, WebSocket(STOMP), RabbitMQ',
-        frontend: 'React, Electron',
-        database: 'MySQL, MongoDB, Redis',
-        infra: 'Docker, GitHub Actions, AWS',
+        backend: 'Node.js, Electron',
+        frontend: 'React, TypeScript, Tailwind CSS, Vite',
+        database: 'SQLite (better-sqlite3)',
+        infra: 'Vitest, electron-builder',
       },
       responsibilities: [
-        'Spring Boot 3.2, WebSocket(STOMP), RabbitMQ를 활용한 실시간 메시징 백엔드 시스템 설계, 구축',
-        'k6 기반 부하 테스트로 WebSocket 채팅 서버 성능을 정량적으로 검증하며, p95 지연 시간 27% 단축 (91.9ms → 67ms), 최대 지연시간 72% 개선 등 실질 성과 도출',
-        '스레드풀 구조 개선, Redis 캐싱 최적화, RabbitMQ 브로커 튜닝 등 백엔드 코드 레벨 최적화를 직접 주도하여 300명 동시 접속 환경에서 메시지 송수신 성공률 100% 달성',
-        'ExecutorService(스레드풀)와 비동기 메시지 소비 구조를 직접 설계·구현하며, 실시간 대화 서비스의 동시성 문제를 효과적으로 해결',
-        'MongoDB 인덱스 설계, 효율적인 쿼리 작성, 불필요한 데이터 접근 최소화 등 대용량 메시지 데이터 환경에서의 데이터 모델링과 성능 최적화',
-        '메시지 삭제/수정 시 권한 검증, 파일 전송 시 예외 처리, 불필요한 로깅/트랜잭션/캐싱 제거 등, 실무에서 요구되는 견고한 예외 처리와 구조적 코드 리팩터링',
-      ],
-      achievements: [
-        'p95 지연 시간 27% 단축 (91.9ms → 67ms)',
-        '최대 지연시간 72% 개선',
-        '300명 동시 접속 환경에서 메시지 송수신 성공률 100% 달성',
+        'Context Isolation 기반 보안 아키텍처 설계 및 IPC 통신 구현',
+        '서비스 레이어 패턴 기반 전역 상태 관리',
+        'React 성능 최적화 (리렌더링 50-70% 감소)',
+        '크로스 플랫폼 빌드 및 배포 자동화(Window, macOS)'
       ],
     },
     {
@@ -275,11 +293,6 @@ Google OAuth2 + JWT 하이브리드 인증으로 보안성과 성능을 동시�
       title: '42SEOUL 프리코스 (La Piscine) 수료',
       institution: '이노베이션아카데미',
       period: '2023.08 - 2023.09',
-    },
-    {
-      title: '디지털콘텐츠디자인학과 중퇴',
-      institution: '오산대학교',
-      period: '2019.03 - 2020.12',
     },
   ],
   // ============================================
