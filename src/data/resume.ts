@@ -18,6 +18,7 @@ export interface PersonalInfo {
   email: string;
   github: string;
   blog: string;
+  portfolio?: string;
 }
 
 export interface SkillCategory {
@@ -83,6 +84,7 @@ export const resumeData: ResumeData = {
     email: 'psc0729@naver.com',
     github: 'github.com/chaniii999',
     blog: 'velog.io/@chaniii999',
+    portfolio: 'https://jewel-mayonnaise-b37.notion.site/SungChan-Park-12f062a2be8d803faf10e3845e22a72c?pvs=74',
   },
   // ============================================
   // 자기소개 (Summary)
@@ -106,7 +108,7 @@ export const resumeData: ResumeData = {
     },
     {
       category: 'Management Tool',
-      items: 'AWS (EC2, S3, RDS, Route53, ACM), GitHub, GitHub Actions',
+      items: 'AWS, - EC2, - S3, - RDS, - Route53, - ACM, GitHub, GitHub Actions',
     },
   ],
   // ============================================
@@ -115,43 +117,55 @@ export const resumeData: ResumeData = {
   projects: [
     {
       title: '01. 텍스트 편집 프로그램',
-      subject: '텍스트 편집 어플리케이션',
-      period: '2025.12 ~ 2025.12 (진행중)',
+      subject: '키보드 중심의 파일 탐색 및 텍스트 편집 데스크톱 애플리케이션',
+      period: '2025.12 ~ 진행중  ',
       role: '1인 개발',
       repository: {
         repo: 'https://github.com/chaniii999/FolderingApp',
       },
-      description: `키보드 중심의 빠른 파일 탐색 및 텍스트 편집 데스크톱앱.
-마우스 없이도 모든 작업을 키보드로 수행할 수 있도록 설계되어
-개발자, 작가, 메모 작성자에게 최적화된 사용자 경험을 제공함.`,
+      description: `마우스 없이도 모든 작업을 키보드 단축키로 수행할 수 있는 로컬 파일 관리 및 텍스트 편집 데스크톱 애플리케이션입니다.
+Context Isolation 기반의 보안 아키텍처와 서비스 레이어 패턴을 적용하여 안정성을 확보했으며,
+React.memo 및 useCallback을 활용한 성능 최적화로 리렌더링을 50-70% 감소시켰습니다.
+Windows와 macOS (Intel & Apple Silicon) 크로스 플랫폼을 지원합니다.`,
       techStack: {
         backend: 'node.js, Electron',
         frontend: 'React, TypeScript, Tailwind CSS, Vite',
-        database: 'SQLite (beter-sqlite3)',
+        database: 'SQLite (better-sqlite3)',
         infra: 'Vitest, electron-builder',
       },
       responsibilities: [
-        '총 개발',
+        '보안 아키텍처 설계(Context Isolation, IPC 통신), 서비스 레이어 패턴 기반 전역 상태 관리',
+        '키보드 단축키 시스템 및 파일 탐색/편집 기능 개발',
+        'React 성능 최적화(리렌더링 50-70% 감소)',
+        '크로스 플랫폼 빌드 및 배포 자동화',
+        'TypeScript 기반 타입 안정성 확보 및 코드 리팩터링',
       ],
     },
     {
-      title: '02. 뽀모도로 AI 피드백 앱 (IOS)',
+      title: '02. 뽀모도로 AI 피드백 앱 (iOS)',
       subject: '학습 AI 피드백 통계 앱',
-      period: '2025.06 ~ 2025.10 (잠정 중단)',
-      role: '1인 개발',
+      period: '2025.06 ~ 2025.10',
+      role: '1인 개발 (풀스택)',
       repository: {
         backend: 'https://github.com/chaniii999/StudyMate',
         frontend: 'https://github.com/chaniii999/studyMateFrontApp',
       },
-      description: `뽀모도로 타이머로 기록한 데이터를 바탕으로 AI 피드백 문서를 생성해, 사용자에게 전략적 학습 방법과 학습 통계를 제공함.`,
+      description: `뽀모도로 타이머로 기록한 학습 데이터를 바탕으로 OpenAI API를 활용한 AI 피드백 문서를 생성하여,
+사용자에게 전략적 학습 방법과 상세한 학습 통계를 제공하는 학습 관리 플랫폼입니다.
+WebSocket 기반 실시간 타이머, 학습 목표 및 스케줄 관리, 다양한 통계 분석 기능을 포함합니다.`,
       techStack: {
-        backend: 'Java, Spring Boot, JPA',
-        frontend: 'React-Native',
-        database: 'MySQL, MongoDB',
-        infra: 'Xcode',
+        backend: 'Java 17, Spring Boot 3.3.6, Spring Security, Spring Data JPA, Spring WebSocket (STOMP), Spring WebFlux, JJWT',
+        frontend: 'React Native (iOS)',
+        database: 'MySQL, Redis',
+        infra: 'OpenAI API (GPT-4o-mini), Spring Mail, Xcode',
       },
       responsibilities: [
-        '총 개발',
+        'JWT 기반 인증 시스템 구축 (Access/Refresh Token), 이메일 인증 (Redis TTL 관리), Spring Security 필터 체인 및 WebSocket Handshake Interceptor를 통한 보안 강화',
+        'WebSocket(STOMP) 기반 실시간 Pomodoro 타이머 구현, 클라이언트/서버 시간 분리로 정확한 학습 시간 추적, 다양한 Pomodoro 모드 지원 (25/5, 50/10 등)',
+        'OpenAI API(GPT-4o-mini) 연동 및 프롬프트 엔지니어링, 지수 백오프 전략(최대 3회 재시도) 및 Rate Limiting(ConcurrentLinkedQueue)을 통한 API 비용 관리',
+        '학습 목표 CRUD 및 진행도 추적, 반복 일정 관리(DAILY, WEEKLY, MONTHLY), 계획 대비 실제 학습 시간 기반 완료율 자동 계산',
+        '일별/주별/월별/연도별 학습 통계 조회, 학습 목표별 통계 추적, JPA 쿼리 메서드 활용한 DB 집계 쿼리 최적화',
+        '14개 커스텀 예외 클래스 정의 및 전역 예외 핸들러 구현, 단위 테스트 및 통합 테스트 작성 (JUnit 5, Spring Boot Test)',
       ],
     },
     {
@@ -183,26 +197,27 @@ export const resumeData: ResumeData = {
     {
       title: '04. 캘린더 웹사이트 : 애브리플랜 (everyplan.site)',
       subject: '캘린더 푸시알림 앱(EveryPlan)',
-      period: '2025.08.14 ~ 2025.08.24 (10일)',
+      period: '2025.08 ~ 2025.09',
       role: '풀스택 1인',
       repository: {
         backend: 'https://github.com/chaniii999/calendar',
         frontend: 'https://github.com/chaniii999/calendar-front',
       },
-      description: `EveryPlan은 기본적인 프론트엔드, 백엔드, CI/CD 규격화를 위해 만들어졌습니다.
-중요 기능으로는 푸시알림으로,
-일정 시작시간 지정을 통해 정해진 시간에 푸시알람을 받을 수 있습니다.`,
+      description: `SSE(Server-Sent Events) 기반 실시간 푸시 알림 시스템을 핵심으로 하는 일정 관리 웹 애플리케이션입니다.
+이벤트 기반 아키텍처를 설계하여 스케줄러와 알림 시스템을 느슨하게 결합하고,
+Google OAuth2 + JWT 하이브리드 인증으로 보안성과 성능을 동시에 확보했습니다.
+프론트엔드(React), 백엔드(Spring Boot), 클라우드 인프라(AWS)까지 완성하여, 실시간 통신 기술과 확장 가능한 아키텍처 설계 능력을 입증했습니다.`,
       techStack: {
-        backend: 'Java, Spring, JPA, OAuth2',
-        frontend: 'HTML, CSS, JS, React, Electron',
+        backend: 'Java, Spring Boot, Spring Security, JPA, OAuth2',
+        frontend: 'HTML, CSS, JavaScript, React',
         database: 'MySQL, Redis',
-        infra: 'AWS EC2, CloudFront, S3, Route53, ACM, ALB, VPC, Git Actions, PostMan, Swagger, SLF4J',
+        infra: 'AWS (EC2, CloudFront, S3, Route53, ACM, ALB, VPC), GitHub Actions, Postman, Swagger, SLF4J',
       },
       responsibilities: [
-        '일정 CRUD 설계',
-        'SSE 푸시알람 설계',
-        '프론트엔드, 백엔드 구현',
-        'AWS CLOUD를 통해 웹사이트 운영',
+        'RESTful API 설계 및 ULID 기반 고유 식별자로 시간순 정렬 최적화, 데이터베이스 인덱스 최적화를 통한 조회 성능 향상, 전역 예외 처리기 및 Swagger API 문서화',
+        'SSE(Server-Sent Events)를 활용한 실시간 단방향 통신 구현, 다중 탭 지원을 위한 연결 관리 시스템, 매분 정각 알림 시간 체크 스케줄러 구현',
+        'React 기반 SPA 프론트엔드 및 Spring Boot 기반 RESTful API 백엔드 개발, Google OAuth2 인증 시스템 통합 및 JWT 토큰 기반 인증 구현',
+        'AWS 인프라 구성 (EC2, CloudFront, S3, Route53, ACM, ALB, VPC), GitHub Actions를 통한 CI/CD 파이프라인 구축 및 환경별 프로파일 분리',
       ],
     },
     {

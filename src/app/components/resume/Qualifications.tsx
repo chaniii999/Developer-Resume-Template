@@ -14,9 +14,9 @@ export default function Qualifications({ qualifications }: QualificationsProps) 
         {qualifications.map((qualification, index) => (
           <div
             key={index}
-            className="bg-gray-50 border border-gray-200 rounded-sm"
+            className="bg-gradient-to-r from-gray-50/80 to-blue-50/30 border border-gray-200/60 rounded-lg shadow-sm hover:shadow transition-shadow"
           >
-            <div className="flex justify-between items-baseline p-3">
+            <div className="flex justify-between items-baseline p-3.5">
               <div className="flex flex-col gap-1">
                 <div className="text-[14px] font-semibold text-gray-900">
                   {qualification.title}

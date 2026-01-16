@@ -11,15 +11,15 @@ export default function App() {
     <div className="min-h-screen bg-gray-50 flex items-center justify-center p-8 print:p-0 print:bg-white">
       <div className="bg-white shadow-lg print:shadow-none w-[210mm] min-h-[297mm] font-[Inter,system-ui,-apple-system,sans-serif]">
         {/* 상단 디자인 요소 */}
-        <div className="bg-gradient-to-r from-blue-600 via-blue-500 to-indigo-600 h-2"></div>
-        <div className="flex items-center gap-2 px-[28px] pt-6 pb-4">
-          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
-          <div className="flex gap-1">
-            <div className="w-2 h-2 rounded-full bg-blue-600"></div>
-            <div className="w-2 h-2 rounded-full bg-blue-500"></div>
-            <div className="w-2 h-2 rounded-full bg-indigo-600"></div>
+        <div className="bg-gradient-to-r from-blue-500 via-blue-400 to-indigo-500 h-2.5 rounded-t-sm"></div>
+        <div className="flex items-center gap-3 px-[28px] pt-6 pb-5">
+          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-blue-200/60 to-transparent"></div>
+          <div className="flex gap-1.5">
+            <div className="w-2.5 h-2.5 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 shadow-sm"></div>
+            <div className="w-2.5 h-2.5 rounded-full bg-gradient-to-br from-blue-300 to-indigo-500 shadow-sm"></div>
+            <div className="w-2.5 h-2.5 rounded-full bg-gradient-to-br from-indigo-400 to-indigo-600 shadow-sm"></div>
           </div>
-          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
+          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-blue-200/60 to-transparent"></div>
         </div>
         <div className="px-[28px]">
           <Header personalInfo={resumeData.personalInfo} />
