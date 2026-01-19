@@ -16,18 +16,13 @@ export default function Qualifications({ qualifications }: QualificationsProps) 
             key={index}
             className="bg-white border border-gray-300 rounded"
           >
-            <div className="flex justify-between items-baseline p-4">
-              <div className="flex flex-col gap-1">
-                <div className="text-[14px] font-semibold text-gray-900">
-                  {qualification.title}
-                </div>
-                <div className="text-[13px] text-gray-700 font-medium">
-                  {qualification.issuer}
-                </div>
+            <div className="flex flex-col gap-1 p-4">
+              <div className="text-[14px] font-semibold text-gray-900">
+                {qualification.title}
               </div>
-              <span className="text-[12px] text-gray-600 font-medium">
-                {qualification.period}
-              </span>
+              <div className="text-[13px] text-gray-700 font-medium">
+                {qualification.issuer}
+              </div>
             </div>
           </div>
         ))}

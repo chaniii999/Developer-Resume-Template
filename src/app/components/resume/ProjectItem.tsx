@@ -73,7 +73,7 @@ export default function ProjectItem({ project, isLast }: ProjectItemProps) {
         </div>
 
         <div className="flex flex-col gap-2">
-          <div className="text-[14px] font-semibold text-gray-900 uppercase tracking-wide border-l-4 border-gray-800 pl-3 py-1">
+          <div className="text-[14px] font-semibold text-gray-900 uppercase tracking-wide border-l-4 border-gray-800 pl-3 py-1 bg-gray-100">
             프로젝트 소개
           </div>
           <p className="text-[13px] text-gray-700 leading-loose whitespace-pre-line bg-white border border-gray-300 rounded p-4">
@@ -82,7 +82,7 @@ export default function ProjectItem({ project, isLast }: ProjectItemProps) {
         </div>
 
         <div className="flex flex-col gap-2">
-          <div className="text-[14px] font-semibold text-gray-900 uppercase tracking-wide border-l-4 border-gray-800 pl-3 py-1">
+          <div className="text-[14px] font-semibold text-gray-900 uppercase tracking-wide border-l-4 border-gray-800 pl-3 py-1 bg-gray-100">
             기술 스택
           </div>
           <div className="bg-white border border-gray-300 rounded">
@@ -120,7 +120,7 @@ export default function ProjectItem({ project, isLast }: ProjectItemProps) {
         </div>
 
         <div className="flex flex-col gap-2">
-          <div className="text-[14px] font-semibold text-gray-900 uppercase tracking-wide border-l-4 border-gray-800 pl-3 py-1">
+          <div className="text-[14px] font-semibold text-gray-900 uppercase tracking-wide border-l-4 border-gray-800 pl-3 py-1 bg-gray-100">
             담당 업무
           </div>
           <div className="bg-white border border-gray-300 rounded">
@@ -134,10 +134,10 @@ export default function ProjectItem({ project, isLast }: ProjectItemProps) {
 
         {project.achievements && project.achievements.length > 0 && (
           <div className="flex flex-col gap-2">
-            <div className="text-[14px] font-semibold text-gray-900 uppercase tracking-wide border-l-4 border-gray-900 pl-3 py-1 bg-gray-50">
+            <div className="text-[14px] font-semibold text-gray-900 uppercase tracking-wide border-l-4 border-gray-900 pl-3 py-1 bg-gray-100">
               성과
             </div>
-            <div className="bg-gray-50 border border-gray-300 rounded">
+            <div className="bg-gray-100 border border-gray-300 rounded">
               <ul className="list-disc list-outside flex flex-col gap-1.5 text-[13px] text-gray-700 p-4 pl-6 leading-relaxed">
                 {project.achievements.map((achievement, index) => (
                   <li key={index} className="font-medium">{achievement}</li>
