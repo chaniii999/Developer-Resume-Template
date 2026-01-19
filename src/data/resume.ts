@@ -98,7 +98,11 @@ p95 지연시간 27% 개선, 300명 동시 접속 환경에서 메시지 송수�
 
 데이터베이스 인덱스 최적화, Redis 캐싱 전략 수립, 스레드풀 구조 개선 등 
 시스템 성능 향상에 대한 깊은 관심과 실무 경험을 가지고 있으며,
-확장 가능하고 안정적인 백엔드 시스템 구축을 목표로 합니다.`,
+확장 가능하고 안정적인 백엔드 시스템 구축을 목표로 합니다.
+
+협업에서는 요구사항을 명확히 문서화하고 지표 기반으로 문제를 공유해
+의사결정 속도를 높였습니다. 자바·스프링 내부 동작과 성능 튜닝을
+지속 학습하며 안정적인 서비스 확장을 추구합니다.`,
   // ============================================
   // 기술 스택 (Skills)
   // ============================================
@@ -141,7 +145,7 @@ p95 지연시간 27% 개선, 300명 동시 접속 환경에서 메시지 송수�
       subject: '커뮤니티 + 실시간 통신 시스템',
       period: '2024.11 – 2025.02',
       role: '백엔드 개발 리드 / 팀장',
-      description: `WebSocket, RabbitMQ + STOMP를 활용한 커뮤니티 + 실시간 통신 시스템 구축`,
+      description: `WebSocket·RabbitMQ 기반 실시간 커뮤니티 메신저 백엔드 구축`,
       techStack: {
         backend: 'Spring Boot 3.2, WebSocket(STOMP), RabbitMQ',
         frontend: 'React, Electron',
@@ -149,12 +153,9 @@ p95 지연시간 27% 개선, 300명 동시 접속 환경에서 메시지 송수�
         infra: 'Docker, GitHub Actions, AWS',
       },
       responsibilities: [
-        '실시간 메시징 백엔드 설계·구축 (Spring Boot, WebSocket, RabbitMQ)',
-        'k6 부하 테스트로 p95 27% 단축, 최대 지연 72% 개선',
-        '스레드풀·Redis·RabbitMQ 튜닝으로 300명 동시 송수신 100% 달성',
-        '비동기 소비 구조 설계로 동시성 이슈 해결',
-        'MongoDB 인덱스·쿼리 최적화로 대용량 메시지 성능 개선',
-        '권한·예외 처리 강화 및 불필요 로깅·트랜잭션 정리',
+        '실시간 메시징 백엔드 아키텍처를 직접 설계하고 구축',
+        '스레드풀·캐싱·브로커 튜닝으로 동시성 처리 흐름을 최적화',
+        'MongoDB 인덱스·쿼리 설계로 대용량 메시지 성능을 개선',
       ],
       achievements: [
         'p95 지연 시간 27% 단축 (91.9ms → 67ms)',
@@ -171,9 +172,7 @@ p95 지연시간 27% 개선, 300명 동시 접속 환경에서 메시지 송수�
         backend: 'https://github.com/chaniii999/StudyMate',
         frontend: 'https://github.com/chaniii999/studyMateFrontApp',
       },
-      description: `뽀모도로 타이머로 기록한 학습 데이터를 바탕으로 OpenAI API를 활용한 AI 피드백 문서를 생성하여,
-사용자에게 전략적 학습 방법과 상세한 학습 통계를 제공하는 학습 관리 플랫폼입니다.
-WebSocket 기반 실시간 타이머, 학습 목표 및 스케줄 관리, 다양한 통계 분석 기능을 포함합니다.`,
+      description: `뽀모도로 학습 데이터를 기반으로 AI 피드백과 통계를 제공하는 iOS 앱`,
       techStack: {
         backend: 'Java 17, Spring Boot 3.3.6, Spring Security, Spring Data JPA, Spring WebSocket (STOMP), Spring WebFlux, JJWT',
         frontend: 'React Native (iOS)',
@@ -181,12 +180,14 @@ WebSocket 기반 실시간 타이머, 학습 목표 및 스케줄 관리, 다양
         infra: 'OpenAI API (GPT-4o-mini), Spring Mail, Xcode',
       },
       responsibilities: [
-        'JWT 기반 인증 시스템 구축 (Access/Refresh Token), 이메일 인증 (Redis TTL 관리), Spring Security 필터 체인 및 WebSocket Handshake Interceptor를 통한 보안 강화',
-        'WebSocket(STOMP) 기반 실시간 Pomodoro 타이머 구현, 클라이언트/서버 시간 분리로 정확한 학습 시간 추적, 다양한 Pomodoro 모드 지원 (25/5, 50/10 등)',
-        'OpenAI API(GPT-4o-mini) 연동 및 프롬프트 엔지니어링, 지수 백오프 전략(최대 3회 재시도) 및 Rate Limiting(ConcurrentLinkedQueue)을 통한 API 비용 관리',
-        '학습 목표 CRUD 및 진행도 추적, 반복 일정 관리(DAILY, WEEKLY, MONTHLY), 계획 대비 실제 학습 시간 기반 완료율 자동 계산',
-        '일별/주별/월별/연도별 학습 통계 조회, 학습 목표별 통계 추적, JPA 쿼리 메서드 활용한 DB 집계 쿼리 최적화',
-        '14개 커스텀 예외 클래스 정의 및 전역 예외 핸들러 구현, 단위 테스트 및 통합 테스트 작성 (JUnit 5, Spring Boot Test)',
+        'JWT 인증/이메일 인증을 설계하고 보안 필터·Handshake를 구성',
+        'WebSocket 타이머와 학습 목표·일정 관리 기능을 설계·구현',
+        'OpenAI API 연동과 프롬프트 설계로 피드백 생성 파이프라인 구축',
+      ],
+      achievements: [
+        'Pomodoro 모드 2종 지원 (25/5, 50/10)',
+        'API 재시도 최대 3회 적용으로 호출 안정성 확보',
+        '커스텀 예외 14개 정의 및 테스트 체계화',
       ],
     },
     {
@@ -197,8 +198,7 @@ WebSocket 기반 실시간 타이머, 학습 목표 및 스케줄 관리, 다양
       repository: {
         repo: 'https://github.com/chaniii999/FolderingApp',
       },
-      description: `마우스 없이도 모든 작업을 키보드 단축키로 수행할 수 있는 로컬 파일 관리 및 텍스트 편집 데스크톱 애플리케이션입니다.
-Context Isolation 기반의 보안 아키텍처와 서비스 레이어 패턴을 적용하여 안정성을 확보했습니다.`,
+      description: `키보드 중심 파일 탐색·텍스트 편집 데스크톱 애플리케이션`,
       techStack: {
         backend: 'Node.js, Electron',
         frontend: 'React, TypeScript, Tailwind CSS, Vite',
@@ -206,10 +206,13 @@ Context Isolation 기반의 보안 아키텍처와 서비스 레이어 패턴을
         infra: 'Vitest, electron-builder',
       },
       responsibilities: [
-        'Context Isolation 기반 보안 아키텍처 설계 및 IPC 통신 구현',
-        '서비스 레이어 패턴 기반 전역 상태 관리',
-        'React 성능 최적화 (리렌더링 50-70% 감소)',
-        '크로스 플랫폼 빌드 및 배포 자동화(Window, macOS)'
+        'Context Isolation 보안 구조와 IPC 통신을 설계',
+        '서비스 레이어로 상태 흐름을 분리해 유지보수성을 확보',
+        '빌드·배포 자동화를 구성해 운영 흐름을 표준화',
+      ],
+      achievements: [
+        '리렌더링 50~70% 감소',
+        'Windows/macOS 2종 빌드·배포 자동화',
       ],
     },
     {
@@ -221,10 +224,7 @@ Context Isolation 기반의 보안 아키텍처와 서비스 레이어 패턴을
         backend: 'https://github.com/chaniii999/calendar',
         frontend: 'https://github.com/chaniii999/calendar-front',
       },
-      description: `SSE(Server-Sent Events) 기반 실시간 푸시 알림 시스템을 핵심으로 하는 일정 관리 웹 애플리케이션입니다.
-이벤트 기반 아키텍처를 설계하여 스케줄러와 알림 시스템을 느슨하게 결합하고,
-Google OAuth2 + JWT 하이브리드 인증으로 보안성과 성능을 동시에 확보했습니다.
-프론트엔드(React), 백엔드(Spring Boot), 클라우드 인프라(AWS)까지 완성하여, 실시간 통신 기술과 확장 가능한 아키텍처 설계 능력을 입증했습니다.`,
+      description: `SSE 기반 실시간 알림과 일정 관리를 제공하는 캘린더 웹`,
       techStack: {
         backend: 'Java, Spring Boot, Spring Security, JPA, OAuth2',
         frontend: 'HTML, CSS, JavaScript, React',
@@ -232,10 +232,13 @@ Google OAuth2 + JWT 하이브리드 인증으로 보안성과 성능을 동시�
         infra: 'AWS (EC2, CloudFront, S3, Route53, ACM, ALB, VPC), GitHub Actions, Postman, Swagger, SLF4J',
       },
       responsibilities: [
-        'RESTful API 설계 및 ULID 기반 고유 식별자로 시간순 정렬 최적화, 데이터베이스 인덱스 최적화를 통한 조회 성능 향상, 전역 예외 처리기 및 Swagger API 문서화',
-        'SSE(Server-Sent Events)를 활용한 실시간 단방향 통신 구현, 다중 탭 지원을 위한 연결 관리 시스템, 매분 정각 알림 시간 체크 스케줄러 구현',
-        'React 기반 SPA 프론트엔드 및 Spring Boot 기반 RESTful API 백엔드 개발, Google OAuth2 인증 시스템 통합 및 JWT 토큰 기반 인증 구현',
-        'AWS 인프라 구성 (EC2, CloudFront, S3, Route53, ACM, ALB, VPC), GitHub Actions를 통한 CI/CD 파이프라인 구축 및 환경별 프로파일 분리',
+        'SSE 알림 흐름을 설계하고 연결 관리 로직을 구축',
+        'REST API와 OAuth2+JWT 인증 플로우를 설계·구현',
+        'AWS 인프라와 CI/CD 파이프라인을 구성',
+      ],
+      achievements: [
+        'AWS 7개 서비스 구성 (EC2, CloudFront, S3, Route53, ACM, ALB, VPC)',
+        '알림 스케줄러 1분 단위 동작 구현',
       ],
     },
     {
@@ -246,20 +249,15 @@ Google OAuth2 + JWT 하이브리드 인증으로 보안성과 성능을 동시�
       repository: {
         repo: 'https://github.com/chaniii999/DayLongCafe',
       },
-      description: `한 달간 무인 카페의 음료 구매 횟수를 집계하여
-상위 고객에게 리워드를 제공하는 단골 고객 랭킹 시스템을 구축.
-
-구매 이력은 Google Spreadsheet로 수집되며, 이를 주기적으로 수집-갱신하여
-랭킹 결과를 시각화된 웹 페이지에서 확인할 수 있도록 API 서버를 개발.`,
+      description: `무인 카페 단골 랭킹 이벤트용 API 및 웹 연동`,
       techStack: {
         backend: 'Java, Spring Boot, Google Spread API',
         infra: 'AWS (EC2, Route53, ACM), Github Actions',
       },
       responsibilities: [
-        'API 서버 구축, 유지보수',
-        '구글 스프레드시트에서 가져온 데이터에서 핸드폰 번호로 데이터 검색',
-        '소비잔수를 기준으로 자신의 현재 순위, 소비잔 수, 다음 리워드까지 필요한 잔 수를 응답',
-        '페이지 검색량 기록을 위해 검색시 로그저장',
+        '랭킹 집계 API를 설계하고 데이터 수집 파이프라인을 구성',
+        '검색·조회 로직을 정리해 사용자별 리워드 정보를 제공',
+        '운영 로그 수집으로 검색 지표를 추적',
       ],
       achievements: [
         '실제 무인 카페(Daylong)에 도입되어 운영, 3월, 4월 간 매장 내 QR 포스터 부착 및 이벤트 페이지를 통해 고객 참여 유도',
