@@ -4,7 +4,7 @@
   /* 페이지 설정 */
   @page {
     size: A4;
-    margin: 15mm 0 0 0;
+    margin: 10mm 0 0 0;
   }
   
   /* 첫 페이지는 상단 여백 없음 */
@@ -170,7 +170,7 @@
   /* 다음 페이지 상단 여백 (페이지 브레이크 후) */
   @page :left,
   @page :right {
-    margin-top: 15mm;
+    margin-top: 10mm;
   }
 
   /* 그림자 제거 */

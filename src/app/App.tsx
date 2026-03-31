@@ -8,8 +8,8 @@ import Qualifications from './components/resume/Qualifications';
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center p-8 print:p-0 print:bg-white">
-      <div className="bg-white shadow-lg print:shadow-none w-[210mm] min-h-[297mm] font-[Inter,system-ui,-apple-system,sans-serif] print-top-design">
+    <div className="min-h-screen bg-gray-50 flex items-center justify-center p-8 print:min-h-0 print:block print:p-0 print:bg-white">
+      <div className="bg-white shadow-lg print:shadow-none w-[210mm] min-h-[297mm] print:min-h-0 font-[Inter,system-ui,-apple-system,sans-serif] print-top-design">
         {/* 상단 디자인 요소 */}
         <div className="bg-gray-900 h-2 top-bar"></div>
         <div className="flex items-center gap-3 px-[28px] pt-8 pb-6 top-design-line">
@@ -21,7 +21,7 @@ export default function App() {
           </div>
           <div className="flex-1 h-px bg-gray-300"></div>
         </div>
-        <div className="px-[28px]">
+        <div className="px-[28px] print:px-[22px]">
           <Header personalInfo={resumeData.personalInfo} />
 
           <div className="h-10"></div>
@@ -36,10 +36,13 @@ export default function App() {
             <>
               <div className="h-10"></div>
               <Qualifications qualifications={resumeData.qualifications} />
+              <div className="h-6"></div>
             </>
           )}
 
-          <div className="h-10"></div>
+          {!resumeData.qualifications || resumeData.qualifications.length === 0 ? (
+            <div className="h-10"></div>
+          ) : null}
 
           <Projects projects={resumeData.projects} />
 
