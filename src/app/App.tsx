@@ -32,23 +32,20 @@ export default function App() {
 
           <Skills skills={resumeData.skills} />
 
+          <div className="h-10"></div>
+
+          <Education education={resumeData.education} />
+
           {resumeData.qualifications && resumeData.qualifications.length > 0 && (
             <>
               <div className="h-10"></div>
               <Qualifications qualifications={resumeData.qualifications} />
-              <div className="h-6"></div>
             </>
           )}
 
-          {!resumeData.qualifications || resumeData.qualifications.length === 0 ? (
-            <div className="h-10"></div>
-          ) : null}
-
-          <Projects projects={resumeData.projects} />
-
           <div className="h-10"></div>
 
-          <Education education={resumeData.education} />
+          <Projects projects={resumeData.projects} />
         </div>
       </div>
     </div>
