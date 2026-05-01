@@ -148,13 +148,13 @@ export const resumeData: ResumeData = {
         infra: 'CUDA, SSE Streaming, WSL2(Ubuntu), .env 기반 운영 설정',
       },
       responsibilities: [
-        '총 4인 팀 팀장으로 OCR·LLM 구축 및 메인·워커 분리 아키텍처 설계·통합 총괄',
-        'OCR: PDF 텍스트 레이어 판별 기반 하이브리드 추출 경로, 페이지 단위 yield 스트리밍, DPI·배치 튜닝, 비동기 스레드 분리·SSE 진행률 피드백',
-        'LLM: vLLM 서빙·Prefix Caching·AWQ·enforce-eager 등 추론·VRAM 최적화 및 동시성 설계',
-        'POST /api/vllm/process 중심 장문 요약 파이프라인(청킹·부분요약·재요약·최종요약·메타데이터)과 asyncio.to_thread 기반 비동기 파이프라인 구축',
-        '의미론적 청킹·BM25+벡터 하이브리드 검색·유사도 하한 필터로 RAG 품질·QA 신뢰성 강화',
-        'RBAC 메타 필터(access_level, owner_user_id)와 파일 단위 격리로 권한 범위 내 컨텍스트만 사용',
-        'UI/UX: 메인 화면 정보 구조·톤 일관화·요약 스트리밍 상태(진행/완료/오류) 가시화·핵심 액션 동선 개선',
+        '팀장(4인): 메인 서버와 NLP 워커 분리 아키텍처 설계·통합, 도메인·요약·RAG 경계 정의 및 구축 범위·일정 총괄',
+        'OCR 파이프라인: 텍스트 레이어 판별 기반 추출 분기, 페이지 단위 yield 스트리밍, DPI·리사이즈·배치 파라미터 튜닝, OCR 오프로딩·SSE 진행률 설계·구현',
+        'LLM 서빙·자원: vLLM 기반 Continuous Batching·Prefix Caching·AWQ·enforce-eager 및 GPU/CPU 연산 분산·동시성 정책 수립·적용',
+        '장문 요약: `POST /api/vllm/process` 중심 청킹·부분·재요약·최종·메타 생성, 계층적 재압축, asyncio.to_thread로 OCR·인제스트·생성 단계 오케스트레이션',
+        'RAG·검색·보안: 맵-리듀스 기반 의미론적 청킹, BM25+벡터 하이브리드 및 유사도 하한 필터, RBAC 메타·파일 단위 격리',
+        'UI/UX: 메인 화면 정보 구조·컴포넌트 톤 정리, 요약 스트리밍 상태(진행/완료/오류) 가시화, 핵심 액션 동선 정리',
+    
       ],
       achievements: [
         '[OCR] 텍스트 레이어 존재 여부 판별로 스캔본이 아닌 PDF의 OCR 엔진 호출 100% 차단, 불필요 GPU 추론·엔진 초기화 오버헤드 제거',

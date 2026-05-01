@@ -122,7 +122,7 @@ node.js
 | 역할 및 인원 | 팀장 및 OCR·LLM 구축 담당 (총 4명) |
 | 프로젝트 소개 | 메인 서버와 리소스 집약적 NLP 워커를 분리한 아키텍처 하에서 OCR 추출·장문 요약·RAG를 설계·구현하고, 팀장으로 OCR·LLM 구축을 총괄함. |
 | 기술 스택 | Backend: Python, FastAPI, httpx, pydantic, uvicorn<br>LLM/RAG: vLLM(OpenAI 호환), LlamaIndex, sentence-transformers, ChromaDB<br>Infra/Tool: CUDA, SSE Streaming, WSL2(Ubuntu), `.env` 기반 운영 설정 |
-| 담당 업무 | 팀장으로 OCR·LLM 구축 총괄·메인·워커 분리 설계, 하이브리드 추출·yield 스트리밍·전처리·배치 튜닝·비동기·SSE 진행률, vLLM·Prefix Caching·AWQ·동시성, 장문 요약·RAG·의미론적 청킹·하이브리드 검색·RBAC, 메인 UI 정보 구조·스트리밍 상태 가시화 |
+| 담당 업무 | 팀장(4인): 메인·NLP 워커 분리 설계·통합<br>OCR: 레이어 판별 분기·yield 스트리밍·전처리·배치·오프로딩·SSE<br>LLM: vLLM·Continuous Batching·Prefix Caching·AWQ·enforce-eager·분산·동시성<br>요약: `/api/vllm/process`·계층 재압축·asyncio.to_thread 오케스트레이션<br>RAG: 의미론적 청킹·BM25+벡터·하한 필터·RBAC·파일 격리<br>UI: 정보 구조·톤·스트리밍 상태·동선 |
 | 성과 | **[OCR]** 텍스트 레이어 판별로 비스캔 PDF OCR 호출 100% 차단·GPU 비용 절감 / yield 스트리밍으로 대용량 PDF 안정 처리 / DPI·배치 튜닝으로 추출 속도 약 20% 향상 / 스레드 분리·SSE로 블로킹 방지·진행률 가시화<br>**[LLM]** Prefix Caching으로 동일 문서 반복 질의 TTFT 최대 80% 이상 단축 / AWQ·분산·enforce-eager로 VRAM 약 39% 절감·8B 안정 서빙 / 워커 분리로 메인 가용성 100% / asyncio.to_thread로 전체 요약 시간 약 30% 감축 / 재압축으로 80페이지 이상 요약 / 8인 동시 VRAM 50% 미만·Throughput 약 400% 이상·16인 확장 가능성 / 의미론적 청킹·BM25+벡터·유사도 0.5 하한으로 QA 신뢰성 강화 |
 | 참고 자료 | architecture: `localLLM-project/architecture.md`<br>전략 문서: `localLLM-project/기존아키텍처설계전략.md` |
 
