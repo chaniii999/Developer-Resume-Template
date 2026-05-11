@@ -306,7 +306,7 @@ export const resumeData: ResumeData = {
       title:
         '심화 AI 학습모델과 생성형 AI를 활용한 문서 인식, 분류 자동화 시스템 개발 과정 수료',
       institution: '글로벌 아카데미',
-      period: '2025.04 ~ 2026.02',
+      period: '2026.02 ~ 2026.04',
     },
     {
       title: '풀스택 백엔드 개발자 양성 과정 수료',
