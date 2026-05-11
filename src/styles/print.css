@@ -19,19 +19,35 @@
     background: white;
   }
 
-  /* 페이지 나눔 방지 */
+  /* 페이지 나눔: 일반 섹션·프로젝트 카드는 이전처럼 가능한 한 통째로 유지 */
   .no-break {
     page-break-inside: avoid;
+    break-inside: avoid;
   }
 
-  /* 섹션 간 페이지 나눔 */
   section {
     page-break-inside: avoid;
+    break-inside: avoid;
   }
 
-  /* 프로젝트 항목이 페이지 중간에서 나뉘지 않도록 */
   .project-item {
     page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /*
+   * Projects만 내용이 매우 길어 전역 section avoid와 만나면
+   * 「대제목 → 빈 페이지 → 첫 프로젝트」 가 발생할 수 있음.
+   * 해당 섹션만 분할을 허용하고, 대제목은 바로 아래 목록과 붙이도록 처리.
+   */
+  section.resume-section-projects {
+    page-break-inside: auto;
+    break-inside: auto;
+  }
+
+  section.resume-section-projects > h2.resume-projects-heading {
+    page-break-after: avoid;
+    break-after: avoid-page;
   }
 
   /* 링크 색상 유지 (일부 브라우저에서 인쇄 시 색상이 사라질 수 있음) */
